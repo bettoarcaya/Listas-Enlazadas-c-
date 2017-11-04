@@ -66,12 +66,17 @@ class listaDoble{
                 aux = aux->obtenerProximo();
             }
 
+            if(aux != NULL){
+                nodoDoble * pre = aux->obtenerPrevio();
+                nodoDoble * pro = aux->obtenerProximo();
+
+                pre->fijarProximo(pro);
+                pro->fijarPrevio(pre);
+
+            }
+
+            mostrar();
 
         }
-
-
-
-
-
 
 };

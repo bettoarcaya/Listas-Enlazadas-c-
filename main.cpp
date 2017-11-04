@@ -4,6 +4,7 @@
 #include<iostream>
 #include "cola.cpp";
 #include "pila.cpp";
+#include "listaDoble.cpp"
 
 using namespace std;
 
@@ -96,7 +97,26 @@ int main(){
     cola * c = new cola();
     pila * p = new pila();
 
-    while(opc != 0){
+    listaDoble * listaD = new listaDoble();
+
+    nodoDoble * n = new nodoDoble();
+    nodoDoble * n1 = new nodoDoble();
+    nodoDoble * n2 = new nodoDoble();
+    nodoDoble * n3 = new nodoDoble();
+
+    n->fijarDato(25);
+    n1->fijarDato(5);
+    n2->fijarDato(10);
+    n3->fijarDato(40);
+
+    listaD->agg(n);
+    listaD->agg(n1);
+    listaD->agg(n2);
+    listaD->agg(n3);
+
+    listaD->eliminar(25);
+
+    /*while(opc != 0){
         cout<<"agregar elemento   >>> press 1"<<endl;
         cout<<"mostrar elementos  >>> press 2"<<endl;
         cout<<"buscar elemento    >>> press 3"<<endl;
@@ -133,7 +153,7 @@ int main(){
             lista->eliminar(num);
         }
 
-    }
+    }*/
 
 
 	//getchar();
