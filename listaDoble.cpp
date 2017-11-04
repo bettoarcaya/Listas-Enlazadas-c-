@@ -70,8 +70,18 @@ class listaDoble{
                 nodoDoble * pre = aux->obtenerPrevio();
                 nodoDoble * pro = aux->obtenerProximo();
 
-                pre->fijarProximo(pro);
-                pro->fijarPrevio(pre);
+
+                if(pre == NULL){
+                    pro->fijarPrevio(pre);
+                    inicio = pro;
+                }
+                if(pro == NULL){
+                    pre->fijarProximo(pro);
+                }
+                if(pre != NULL && pro != NULL){
+                    pre->fijarProximo(pro);
+                    pro->fijarPrevio(pre);
+                }
 
             }
 
