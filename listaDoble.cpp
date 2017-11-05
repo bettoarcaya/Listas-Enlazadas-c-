@@ -21,7 +21,7 @@ class nodoDoble{
         nodoDoble * obtenerPrevio() { return previo; }
 };
 
-class listaDoble{
+class listaDoble{// lista doble
 
     nodoDoble * inicio;
 

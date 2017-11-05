@@ -39,9 +39,19 @@ class listaEnlazada{ //listas simples!
         listaEnlazada(){inicio = NULL;}
 
         void insertar(nodo * x){
+
+            nodo * aux = inicio;
+
+            //ingresar ordenadamente..
+            /*while(aux != NULL && x->obtener_dato() > aux->obtener_proximo()->obtener_dato()){
+                aux = aux->obtener_proximo();
+            }*/
+
+
             if(inicio != NULL){
                 x->fijar_proximo(inicio);
             }
+
             inicio = x;
         }
 
