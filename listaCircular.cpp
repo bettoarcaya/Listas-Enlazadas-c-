@@ -31,7 +31,7 @@ class listaCircular{ //lista doble circular
         listaCircular(){
             Sentinel = new nodoDoble();
             Sentinel->fijarProximo(Sentinel);
-            Sentinel->fijarPrevio(sentinel);
+            Sentinel->fijarPrevio(Sentinel);
         }
 
         void agg(nodoDoble * x){
@@ -40,6 +40,30 @@ class listaCircular{ //lista doble circular
             Sentinel->obtenerProximo()->fijarPrevio(x);
             Sentinel->fijarProximo(x);
             x->fijarPrevio(Sentinel);
+
+        }
+
+        nodoDoble * buscar(int k){
+            nodoDoble * aux = Sentinel->obtenerProximo();
+
+            while(aux != Sentinel && aux->obtenerDato() != k){
+                aux = aux->obtenerProximo();
+            }
+
+            return aux;
+        }
+
+        void eliminar(int k){
+
+            nodoDoble * aux = Sentinel->obtenerProximo();
+            while(aux != Sentinel && aux->obtenerDato() != k){
+                aux = aux->obtenerProximo();
+            }
+
+            if(aux != Sentinel){
+                aux->obtenerPrevio()->fijarProximo(aux->obtenerProximo());
+                aux->obtenerProximo()->fijarPrevio(aux->obtenerPrevio());
+            }
 
         }
 
