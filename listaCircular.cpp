@@ -36,7 +36,10 @@ class listaCircular{ //lista doble circular
 
         void agg(nodoDoble * x){
 
-
+            x->fijarProximo(Sentinel->obtenerProximo());
+            Sentinel->obtenerProximo()->fijarPrevio(x);
+            Sentinel->fijarProximo(x);
+            x->fijarPrevio(Sentinel);
 
         }
 
