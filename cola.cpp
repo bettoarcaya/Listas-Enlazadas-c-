@@ -13,6 +13,7 @@ class cola{
         cola(){
             primero = ultimo = 0;
         }
+
         bool colaLLena(){
             if(((ultimo + 1) % 5) == primero){
                 return true;

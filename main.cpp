@@ -41,17 +41,29 @@ class listaEnlazada{ //listas simples!
         void insertar(nodo * x){
 
             nodo * aux = inicio;
+            nodo * pre = NULL;
 
             //ingresar ordenadamente..
-            /*while(aux != NULL && ){
-
-            }*/
-
-            if(inicio != NULL){
-                x->fijar_proximo(inicio);
+            while(aux != NULL && x->obtener_dato() > aux->obtener_dato()){
+                pre = aux;
+                aux = aux->obtener_proximo();
             }
 
-            inicio = x;
+            if(inicio != NULL){
+
+                if(pre == NULL){
+                    x->fijar_proximo(inicio);
+                    inicio = x;
+                }else if(aux == NULL){
+                    pre->fijar_proximo(x);
+                }else{
+                    pre->fijar_proximo(x);
+                    x->fijar_proximo(aux);
+                }
+
+            }else{
+                inicio = x;
+            }
         }
 
         void mostrar(){
@@ -107,8 +119,6 @@ int main(){
     nodoDoble * nd;
     cola * c = new cola();
     pila * p = new pila();
-
-
 
     while(opc != 0){
         cout<<"agregar elemento   >>> press 1"<<endl;

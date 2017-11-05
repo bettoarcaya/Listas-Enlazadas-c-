@@ -67,9 +67,5 @@ class listaCircular{ //lista doble circular
 
         }
 
-
-
-
-
 };
 
