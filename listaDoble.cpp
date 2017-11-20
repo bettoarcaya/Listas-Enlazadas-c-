@@ -31,12 +31,38 @@ class listaDoble{// lista doble
 
         void agg(nodoDoble * x){
 
+            nodoDoble * aux = inicio;
+
+            while(aux->obtenerProximo() != NULL && x->obtenerDato() > aux->obtenerDato()){
+                aux = aux->obtenerProximo();
+            }
+
             if(inicio != NULL){
+                //revisar esto!!!
+
+                if(aux->obtenerPrevio() == NULL){
+                    x->fijarProximo(inicio);
+                    inicio->fijarPrevio(x);
+                    inicio = x;
+
+                }else /*if(aux->obtenerProximo() == NULL)*/{
+                    x->fijarProximo(aux);
+                    aux->obtenerPrevio()->fijarProximo(x);
+                    x->fijarPrevio(aux->obtenerPrevio());
+
+                }
+
+            }else{
+                inicio = x;
+            }
+
+
+            /*if(inicio != NULL){
                x->fijarProximo(inicio);
                inicio->fijarPrevio(x);
             }
 
-            inicio = x;
+            inicio = x;*/
         }
 
         nodoDoble * buscar(int k){

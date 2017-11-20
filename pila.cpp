@@ -1,11 +1,12 @@
 #include <iostream>
-
+#include "nodo.cpp"
 using namespace std;
 
-class pila{
+
+/*class pila{
 
     int primero;
-    int pil[5];
+    nodo * pil[5];
 
 
     public:
@@ -25,7 +26,7 @@ class pila{
             return false;
         }
 
-        void agg(int x){
+        void agg(nodo * x){
             if(!pilaLLena()){
                 primero++;
                 pil[primero] = x;
@@ -34,9 +35,9 @@ class pila{
             }
         }
 
-        int extraer(){
+        nodo * extraer(){
             if(!pilaVacia()){
-                int n = pil[primero];
+                nodo * n = pil[primero];
                 primero--;
                 return n;
             }
@@ -52,3 +53,4 @@ class pila{
         }
 
 };
+*/
